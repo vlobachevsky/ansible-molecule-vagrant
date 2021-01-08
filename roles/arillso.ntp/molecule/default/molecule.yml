@@ -31,3 +31,7 @@ provisioner:
     ansible_winrm_server_cert_validation: ignore
 verifier:
   name: ansible
+lint: |
+  set -e
+  yamllint .
+  #ansible-lint
