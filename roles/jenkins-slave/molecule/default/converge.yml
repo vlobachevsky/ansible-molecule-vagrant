@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include arillso.ntp"
+    - name: "Include jenkins-slave"
       include_role:
-        name: "arillso.ntp"
+        name: "jenkins-slave"
