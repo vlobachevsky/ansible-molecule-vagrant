@@ -4,8 +4,7 @@
   gather_facts: false
   vars:
     powershell_cmd: >
-      powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass
-        -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+      powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
   tasks:
     - name: Bootstrap python for Ansible
       raw: |
