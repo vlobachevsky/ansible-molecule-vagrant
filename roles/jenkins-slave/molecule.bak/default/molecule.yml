@@ -14,13 +14,9 @@ platforms:
     box: jborean93/WindowsServer2019
     instance_raw_config_args:
       - "winrm.timeout =   1800"
-      - "vm.boot_timeout = 1800" 
+      - "vm.boot_timeout = 1800"
 provisioner:
   name: ansible
-  # config_options:
-  #   defaults:
-  #     local_tmp: /mnt/c/tmp
-  #     remote_tmp: /mnt/c/tmp
   connection_options:
     ansible_user: vagrant
     ansible_password: vagrant
@@ -34,4 +30,4 @@ verifier:
 lint: |
   set -e
   yamllint .
-  #ansible-lint
+  ansible-lint
