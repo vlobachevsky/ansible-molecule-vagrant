@@ -2,10 +2,14 @@
 - name: Prepare
   hosts: all
   gather_facts: false
+  vars:
+    powershell_cmd: >
+      powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass
+        -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
   tasks:
     - name: Bootstrap python for Ansible
       raw: |
-        powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+        {{ powershell_cmd }}
         SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
         choco install -y python3
       changed_when: false
