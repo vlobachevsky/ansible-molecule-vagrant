@@ -8,6 +8,7 @@
   win_copy:
     src: "files/{{ item }}"
     dest: "{{ jenkins_home_dir }}/{{ item }}"
+    remote_src: true
   loop:
     - jenkins-slave.exe
     - slave.jar
