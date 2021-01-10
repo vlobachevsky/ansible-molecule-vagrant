@@ -1,0 +1,25 @@
+---
+- name: Check if the Jenkins Slave service installed
+  win_service:
+    name: Jenkins_Slave
+  register: service_info
+
+- name: Download the Jenkins Slave package
+  when: service_info.exists == false
+
+- name: Install the Jenkins Slave service
+  when: service_info.exists == false
+
+- name: Check if the Jenkins Slave service installed
+  win_service:
+    name: Jenkins_Slave
+  register: service_info
+
+- name: Start the Jenkins Slave service
+  win_service:
+    name: Jenkins_Slave
+    start_mode: auto
+    state: started
+  when: service_info.exists == true
+
+
