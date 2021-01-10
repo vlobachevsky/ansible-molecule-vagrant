@@ -4,13 +4,15 @@
     name: "{{ jenkins_service_name }}"
     state: absent
 
-- name: Copy the service files
+- name: Copy the service exe file
   win_copy:
-    src: "{{ item }}"
-    dest: "{{ jenkins_home_dir }}/{{ item }}"
-  loop:
-    - jenkins-slave.exe
-    - slave.jar
+    src: jenkins-slave.exe
+    dest: "{{ jenkins_home_dir }}/jenkins-slave.exe"
+
+- name: Copy the service jar file
+  win_copy:
+    src: slave.jar
+    dest: "{{ jenkins_home_dir }}/slave.jar"
 
 - name: Install the service
   win_service:
