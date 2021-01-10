@@ -7,4 +7,4 @@
 - name: Test Jenkins Slave service is installed
   assert:
     that:
-      - service_info.exists == false
+      - service_info.exists == true
