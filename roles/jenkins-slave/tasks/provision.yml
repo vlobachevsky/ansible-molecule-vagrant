@@ -6,7 +6,7 @@
 
 - name: Copy the service files
   win_copy:
-    src: "files/{{ item }}"
+    src: "{{ item }}"
     dest: "{{ jenkins_home_dir }}/{{ item }}"
     remote_src: true
   loop:
