@@ -1,9 +1,7 @@
 ---
-# This is an example playbook to execute Ansible tests.
-
 - name: Verify
   hosts: all
   tasks:
-    - name: Example assertion
-      assert:
-        that: true
+    - name: "Include test_jenkins-slave"
+      include_role:
+        name: "test_jenkins-slave"
