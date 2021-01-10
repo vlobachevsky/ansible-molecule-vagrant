@@ -1,0 +1,26 @@
+---
+- name: Remove the service
+  win_service:
+    name: "{{ jenkins_service_name }}"
+    state: absent
+
+- name: Copy the service files
+  win_copy:
+    src: "files/{{ item }}"
+    dest: "{{ jenkins_home_dir }}\{{ item }}"
+  with_items:
+    - jenkins-slave.exe
+    - slave.jar
+
+- name: Install the service
+  win_service:
+    name: "{{ jenkins_service_name }}"
+    path: "{{ jenkins_home_dir }}\jenkins-slave.exe"
+
+- name: Configure the service
+  include_tasks: configure.yml
+
+- name: Start the service
+  win_service:
+    name: "{{ jenkins_service_name }}"
+    state: started
