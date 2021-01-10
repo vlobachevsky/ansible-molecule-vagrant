@@ -1,2 +1,3 @@
 ---
-# defaults file for jenkins-slave
+- name: Include tasks for testing Jenkins service
+  include_tasks: test_jenkins_service.yml
