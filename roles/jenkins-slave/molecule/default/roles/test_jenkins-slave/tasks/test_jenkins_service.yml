@@ -1,5 +1,10 @@
 ---
-- name: Check if Jenkins Slave service is installed
+- name: Get Jenkins Slave service info
   win_service:
     name: Jenkins_Slave
   register: service_info
+
+- name: Test Jenkins Slave service is installed
+  assert:
+    that:
+      - service_info.exists == true
