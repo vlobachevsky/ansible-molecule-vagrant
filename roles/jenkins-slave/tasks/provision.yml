@@ -4,6 +4,11 @@
     name: "{{ jenkins_service_name }}"
     state: absent
 
+- name: Create the service home dir
+  win_file:
+    path: "{{ jenkins_home_dir }}"
+    state: directory
+
 - name: Copy the service exe file
   win_copy:
     src: jenkins-slave.exe
