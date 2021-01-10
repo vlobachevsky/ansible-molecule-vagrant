@@ -18,7 +18,6 @@
   win_copy:
     src: slave.jar
     dest: "{{ jenkins_home_dir }}\\slave.jar"
-    remote_src: true
 
 - name: Install the service
   win_service:
