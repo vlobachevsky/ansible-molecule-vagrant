@@ -1,4 +1,4 @@
 ---
 # defaults file for jenkins-slave
-jenkins_service_name: Jenkins_Slave
-jenkins_home_dir: C:\Jenkins_Slave
+jenkins_slave_service_name: Jenkins_Slave
+jenkins_slave_home_dir: C:\Jenkins_Slave
