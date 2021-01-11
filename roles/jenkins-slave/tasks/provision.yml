@@ -27,7 +27,7 @@
 - name: Configure the service
   include_tasks: configure.yml
 
-- name: Start the service
-  win_service:
-    name: "{{ jenkins_service_name }}"
-    state: started
+#- name: Start the service
+#  win_service:
+#    name: "{{ jenkins_service_name }}"
+#    state: started
