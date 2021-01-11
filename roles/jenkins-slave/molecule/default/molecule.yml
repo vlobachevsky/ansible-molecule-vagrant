@@ -29,6 +29,10 @@ provisioner:
     ansible_winrm_transport: ntlm
     ansible_shell_type: powershell
     ansible_winrm_server_cert_validation: ignore
+  inventory:
+    host_vars:
+      WindowsServer2019:
+        host_var_test: ABC
 verifier:
   name: ansible
 lint: |
