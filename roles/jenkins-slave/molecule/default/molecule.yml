@@ -30,9 +30,9 @@ provisioner:
     ansible_shell_type: powershell
     ansible_winrm_server_cert_validation: ignore
   inventory:
-    host_vars:
-      WindowsServer2019:
-        host_var_test: ABC
+    links:
+      host_vars: ../../../../host_vars/
+
 verifier:
   name: ansible
 lint: |
