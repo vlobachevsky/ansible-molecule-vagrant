@@ -1,7 +1,7 @@
 ---
 - name: Debug host vars
   debug:
-    msg: "host_var_test: {{ host_var_test }}"
+    msg: "ansible_inventory_sources: {{ ansible_inventory_sources }}"
 
 - name: Remove the service
   win_service:
