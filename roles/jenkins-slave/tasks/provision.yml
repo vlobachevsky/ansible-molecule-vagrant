@@ -1,7 +1,7 @@
 ---
 - name: Debug host vars
   debug:
-    msg: "{{ host_var_test }}"
+    msg: "inventory_hostname: {{ inventory_hostname }}; inventory_hostname_short: {{ inventory_hostname_short }}"
 
 - name: Remove the service
   win_service:
