@@ -24,7 +24,7 @@
     name: "{{ jenkins_service_name }}"
     path: "{{ jenkins_home_dir }}\\jenkins-slave.exe"
 
-- name: Configure the service
+- name: Include the service configure tasks
   include_tasks: configure.yml
 
 #- name: Start the service
