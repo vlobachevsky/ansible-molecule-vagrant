@@ -37,7 +37,7 @@ THE SOFTWARE.
     The following value assumes that you have java in your PATH.
   -->
   <executable>d:\java\bin\java.exe</executable>
-  <arguments>-Xrs {{ jenkins_slave_jvm_args }} -jar "%BASE%\slave.jar" -jnlpUrl {{ jenkins_url }}/computer/{{ inventory_hostname }}/slave-agent.jnlp -secret {{ jenkins_service_secret }}</arguments>
+  <arguments>-Xrs {{ jenkins_slave_jvm_args }} -jar "%BASE%\slave.jar" -jnlpUrl {{ jenkins_url }}/computer/{{ inventory_hostname }}/slave-agent.jnlp -secret {{ jenkins_slave_secret }}</arguments>
   <!--
     interactive flag causes the empty black Java window to be displayed.
     I'm still debugging this.
