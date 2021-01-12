@@ -33,4 +33,4 @@
   debug:
     msg: 'ABC'
   tags:
-    - provision
+    - configure
