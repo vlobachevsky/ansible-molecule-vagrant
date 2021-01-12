@@ -6,4 +6,7 @@
       include_role:
         name: 'jenkins-slave'
         apply:
-          tags: provision
+          tags:
+            - provision
+      tags:
+        - always
