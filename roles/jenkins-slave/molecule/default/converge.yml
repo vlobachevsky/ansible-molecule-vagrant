@@ -4,9 +4,4 @@
   tasks:
     - name: Include jenkins-slave
       include_role:
-        name: 'jenkins-slave'
-        apply:
-          tags:
-            - provision
-      tags:
-        - always
+        name: jenkins-slave
