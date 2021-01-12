@@ -1,6 +1,3 @@
 ---
-# tasks file for arillso.ntp
-
-- name: Message
-  debug:
+- debug:
     msg: 'Your {{ ansible_os_family }} is not supported'
