@@ -16,7 +16,5 @@
     - files:
         - '{{ ansible_os_family }}/main.yml'
         - 'defaults.yml'
-      paths:
-        - '{{ ansible_os_family }}'
   loop_control:
     loop_var: loop_distribution
