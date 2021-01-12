@@ -1,6 +1,6 @@
 ---
-- name: Include tasks
-  include_tasks:
-    files:
-      - provision.yml
-      - configure.yml
+- name: Include provision tasks
+  include_tasks: provision.yml
+
+- name: Include configure tasks
+  include_tasks: configure.yml
