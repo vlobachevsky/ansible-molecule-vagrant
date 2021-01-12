@@ -27,7 +27,7 @@
   notify:
     - Update the service config
   tags:
-    - provision
+    - configuration
 
 - name: Debug
   debug:
