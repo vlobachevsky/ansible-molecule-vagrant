@@ -1,3 +1,7 @@
 ---
 - name: Include tasks for testing Jenkins service
-  include_tasks: test_jenkins_slave.yml
+  include_tasks:
+    file: test_jenkins_slave.yml
+    apply:
+      tags:
+        - provision
