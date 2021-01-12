@@ -1,7 +1,10 @@
 ---
+- debug:
+    msg: '{{ ansible_run_tags }}'
+
 - name: Create the service home dir
   win_file:
-    path: "{{ jenkins_slave_home_dir }}"
+    path: '{{ jenkins_slave_home_dir }}'
     state: directory
   tags:
     - provision
@@ -9,21 +12,21 @@
 - name: Copy the service exe file to the home dir
   win_copy:
     src: jenkins-slave.exe
-    dest: "{{ jenkins_slave_home_dir }}\\jenkins-slave.exe"
+    dest: '{{ jenkins_slave_home_dir }}\\jenkins-slave.exe'
   tags:
     - provision
 
 - name: Copy the service jar file to the home dir
   win_copy:
     src: slave.jar
-    dest: "{{ jenkins_slave_home_dir }}\\slave.jar"
+    dest: '{{ jenkins_slave_home_dir }}\\slave.jar'
   tags:
     - provision
 
 - name: Install the service
   win_service:
-    name: "{{ jenkins_slave_service_name }}"
-    path: "{{ jenkins_slave_home_dir }}\\jenkins-slave.exe"
+    name: '{{ jenkins_slave_service_name }}'
+    path: '{{ jenkins_slave_home_dir }}\\jenkins-slave.exe'
   notify:
     - Update the service config
   tags:
