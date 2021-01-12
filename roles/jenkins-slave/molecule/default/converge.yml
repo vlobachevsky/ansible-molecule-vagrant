@@ -5,5 +5,5 @@
     - name: Include jenkins-slave
       include_role:
         name: 'jenkins-slave'
-        tags:
-          - provision
+#        tags:
+#          - provision
