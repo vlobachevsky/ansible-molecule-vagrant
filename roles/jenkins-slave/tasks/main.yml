@@ -1,9 +1,4 @@
 ---
-#- name: Remove the service
-#  win_service:
-#    name: "{{ jenkins_slave_service_name }}"
-#    state: absent
-
 - name: Create the service home dir
   win_file:
     path: "{{ jenkins_slave_home_dir }}"
@@ -11,14 +6,14 @@
   tags:
     - provision
 
-- name: Copy the service exe file
+- name: Copy the service exe file to the home dir
   win_copy:
     src: jenkins-slave.exe
     dest: "{{ jenkins_slave_home_dir }}\\jenkins-slave.exe"
   tags:
     - provision
 
-- name: Copy the service jar file
+- name: Copy the service jar file to the home dir
   win_copy:
     src: slave.jar
     dest: "{{ jenkins_slave_home_dir }}\\slave.jar"
@@ -33,8 +28,3 @@
     - Update the service config
   tags:
     - provision
-
-#- name: Start the service
-#  win_service:
-#    name: "{{ jenkins_slave_service_name }}"
-#    state: started
