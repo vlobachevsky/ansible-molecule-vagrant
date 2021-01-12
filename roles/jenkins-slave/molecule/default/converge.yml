@@ -2,9 +2,8 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include jenkins-slave"
+    - name: 'Include jenkins-slave'
       include_role:
-        name: "jenkins-slave"
-        apply:
-          tags:
-            - configuration
+        name: 'jenkins-slave'
+        tags:
+          - provision
