@@ -4,6 +4,6 @@
   tasks:
     - name: Include jenkins-slave
       include_role:
-        name: jenkins-slave
+        name: 'jenkins-slave'
         tags:
           - provision
