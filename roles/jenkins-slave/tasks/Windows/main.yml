@@ -1,0 +1,6 @@
+---
+- name: Include OS specific provision tasks
+  include_tasks: provision.yml
+
+- name: Include OS specific configure tasks
+  include_tasks: configure.yml

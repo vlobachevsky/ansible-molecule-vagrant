@@ -1,24 +1,22 @@
 ---
 - name: Add OS specific variables
-#  include_vars: '{{ loop_vars }}'
+  include_vars: '{{ loop_vars }}'
   with_first_found:
     - files:
         - '{{ ansible_os_family }}.yml'
         - 'defaults.yml'
       paths:
         - 'vars'
-#  loop_control:
-#    loop_var: loop_vars
-#  vars:
-#    distribution: '{{ ansible_distribution }}'
-#    distribution_version: '{{ ansible_distribution_version }}'
-#    distribution_major_version: '{{ ansible_distribution_major_version }}'
-#  tags:
-#    - configuration
-#    - packages
+  loop_control:
+    loop_var: loop_vars
 
-- name: Include provision tasks
-  include_tasks: provision.yml
-
-- name: Include configure tasks
-  include_tasks: configure.yml
+- name: Include OS specific tasks
+  include_tasks: '{{ loop_distribution }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_os_family }}/main.yml'
+        - 'defaults.yml'
+      paths:
+        - '{{ ansible_os_family }}'
+  loop_control:
+    loop_var: loop_distribution
