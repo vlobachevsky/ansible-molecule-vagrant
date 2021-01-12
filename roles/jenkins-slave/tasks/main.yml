@@ -28,3 +28,9 @@
     - Update the service config
   tags:
     - provision
+
+- name: Debug
+  debug:
+    msg: 'ABC'
+  tags:
+    - configure
