@@ -1,5 +1,0 @@
----
-- name: Configure the service
-  win_template:
-    src: jenkins-slave.j2
-    dest: "{{ jenkins_slave_home_dir }}/jenkins-slave.xml"

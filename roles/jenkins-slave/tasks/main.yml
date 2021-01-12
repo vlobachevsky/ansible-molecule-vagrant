@@ -1,3 +1,40 @@
 ---
-- name: Include the service provision tasks
-  include_tasks: provision.yml
+#- name: Remove the service
+#  win_service:
+#    name: "{{ jenkins_slave_service_name }}"
+#    state: absent
+
+- name: Create the service home dir
+  win_file:
+    path: "{{ jenkins_slave_home_dir }}"
+    state: directory
+  tags:
+    - provision
+
+- name: Copy the service exe file
+  win_copy:
+    src: jenkins-slave.exe
+    dest: "{{ jenkins_slave_home_dir }}\\jenkins-slave.exe"
+  tags:
+    - provision
+
+- name: Copy the service jar file
+  win_copy:
+    src: slave.jar
+    dest: "{{ jenkins_slave_home_dir }}\\slave.jar"
+  tags:
+    - provision
+
+- name: Install the service
+  win_service:
+    name: "{{ jenkins_slave_service_name }}"
+    path: "{{ jenkins_slave_home_dir }}\\jenkins-slave.exe"
+  notify:
+    - Update the service config
+  tags:
+    - provision
+
+#- name: Start the service
+#  win_service:
+#    name: "{{ jenkins_slave_service_name }}"
+#    state: started
