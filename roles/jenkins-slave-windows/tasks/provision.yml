@@ -1,0 +1,22 @@
+---
+- name: Create the service home dir
+  win_file:
+    path: '{{ jenkins_slave_home_dir }}'
+    state: directory
+
+- name: Copy the service exe file to the home dir
+  win_copy:
+    src: jenkins-slave.exe
+    dest: '{{ jenkins_slave_home_dir }}\\jenkins-slave.exe'
+
+- name: Copy the service jar file to the home dir
+  win_copy:
+    src: slave.jar
+    dest: '{{ jenkins_slave_home_dir }}\\slave.jar'
+
+- name: Install the service
+  win_service:
+    name: '{{ jenkins_slave_service_name }}'
+    path: '{{ jenkins_slave_home_dir }}\\jenkins-slave.exe'
+  notify:
+    - Update the service config

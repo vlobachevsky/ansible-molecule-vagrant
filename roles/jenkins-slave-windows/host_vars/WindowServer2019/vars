@@ -1,0 +1,3 @@
+---
+jenkins_slave_jvm_args:
+jenkins_slave_secret: XYZ

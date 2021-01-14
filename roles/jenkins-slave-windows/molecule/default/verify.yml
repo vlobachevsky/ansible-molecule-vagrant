@@ -1,0 +1,7 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: "Include test_jenkins-slave"
+      include_role:
+        name: "test_jenkins-slave"

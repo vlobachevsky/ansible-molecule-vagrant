@@ -1,0 +1,6 @@
+---
+- name: Include provision tasks
+  include_tasks: provision.yml
+
+- name: Include configure tasks
+  include_tasks: configure.yml
