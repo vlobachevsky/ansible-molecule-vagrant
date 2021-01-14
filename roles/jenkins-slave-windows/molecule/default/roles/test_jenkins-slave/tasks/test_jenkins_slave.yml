@@ -12,5 +12,5 @@
 - name: Test config file has valid secret
   win_lineinfile:
     path: '{{ jenkins_slave_home_dir }}/jenkins-slave.xml'
-    regex: '<arguments>.*-secret {{ jenkins_slave_secret }}</arguments>'
+    regex: '<arguments>'
     state: present
