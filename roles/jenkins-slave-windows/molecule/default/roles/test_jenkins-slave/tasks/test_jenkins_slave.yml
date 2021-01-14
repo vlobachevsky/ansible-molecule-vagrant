@@ -10,7 +10,7 @@
       - service_info.exists == true
 
 - debug:
-    - msg: '{{ jenkins_slave_home_dir }}'
+    msg: '{{ jenkins_slave_home_dir }}'
 
 #- name: Test config file has valid secret
 #  win_lineinfile:
