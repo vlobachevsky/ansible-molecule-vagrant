@@ -1,2 +1,3 @@
 ---
 # defaults file for jenkins-slave
+foo_var: FOO
