@@ -2,3 +2,6 @@
 - name: Include tasks for testing Jenkins service
   include_tasks:
     file: test_jenkins_slave.yml
+  vars:
+    bar_var: BAR from tasks/main.yml
+    foo_bar: FOO from tasks/main.yml
