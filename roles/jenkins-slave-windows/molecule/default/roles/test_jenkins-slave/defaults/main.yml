@@ -1,3 +1,4 @@
 ---
 # defaults file for jenkins-slave
 bar_var: BAR
+foo_var: XXX
