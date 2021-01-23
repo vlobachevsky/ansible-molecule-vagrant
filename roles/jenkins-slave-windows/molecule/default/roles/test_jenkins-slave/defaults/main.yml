@@ -3,4 +3,3 @@
 bar_var: BAR
 foo_var: XXX
 #jenkins_slave_home_dir: ABC
-jenkins_slave_home_dir: ABC
