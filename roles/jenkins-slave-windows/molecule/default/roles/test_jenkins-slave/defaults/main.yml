@@ -2,3 +2,4 @@
 # defaults file for jenkins-slave
 bar_var: BAR
 foo_var: XXX
+jenkins_slave_home_dir: ABC
