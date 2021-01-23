@@ -9,12 +9,12 @@
     that:
       - service_info.exists == true
 
-- debug:
-    msg: '{{ jenkins_slave_home_dir }}'
+#- debug:
+#    msg: '{{ jenkins_slave_home_dir }}'
 #    msg: 'FOO_VAR: {{ foo_var }}, BAR_VAR: {{ bar_var }}'
 
-#- name: Test config file has valid secret
-#  win_lineinfile:
-#    path: '{{ jenkins_slave_home_dir }}/jenkins-slave.xml'
-#    regex: '<arguments>'
-#    state: present
+- name: Test config file has valid secret
+  win_lineinfile:
+    path: '{{ jenkins_slave_home_dir }}/jenkins-slave.xml'
+    regex: '<arguments>'
+    state: present
