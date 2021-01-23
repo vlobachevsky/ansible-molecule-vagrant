@@ -7,4 +7,4 @@
         name: "test_jenkins-slave"
       vars:
 #        jenkins_slave_home_dir: '{{ jenkins_slave_home_dir }}'
-        jenkins_slave_home_dir: '123'
+        jenkins_slave_home_dir: '{{ jenkins_master_url }}'
