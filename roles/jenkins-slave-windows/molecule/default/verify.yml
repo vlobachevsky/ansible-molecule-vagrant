@@ -5,5 +5,5 @@
     - name: "Include test_jenkins-slave"
       include_role:
         name: "test_jenkins-slave"
-      vars:
-        jenkins_slave_home_dir: '{{ jenkins_slave_home_dir }}'
+#      vars:
+#        jenkins_slave_home_dir: '{{ jenkins_slave_home_dir }}'
