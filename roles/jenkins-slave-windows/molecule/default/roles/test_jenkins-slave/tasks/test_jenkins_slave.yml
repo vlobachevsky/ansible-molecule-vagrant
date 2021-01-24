@@ -14,16 +14,16 @@
 #    msg: 'FOO_VAR: {{ foo_var }}, BAR_VAR: {{ bar_var }}'
 
 
-#- name: Test config file has valid secret
-#  assert:
-#    that:
-#      - out.found
-
 - name: Get Jenkins Slave config file
   win_shell: cat jenkins-slave.xml
   args:
     chdir: '{{ jenkins_slave_home_dir }}'
   register: out
+
+- name: Test config file has valid secret
+  assert:
+    that:
+      - out.stdout.contains('-secret XYZ')
 
 - debug:
     msg: '{{ out }}'
