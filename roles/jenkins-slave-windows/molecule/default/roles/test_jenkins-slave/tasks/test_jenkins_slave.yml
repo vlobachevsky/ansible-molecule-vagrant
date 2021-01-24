@@ -9,11 +9,6 @@
     that:
       - service_info.exists == true
 
-#- debug:
-#    msg: '{{ jenkins_slave_home_dir }}'
-#    msg: 'FOO_VAR: {{ foo_var }}, BAR_VAR: {{ bar_var }}'
-
-
 - name: Get Jenkins Slave config file
   win_shell: cat jenkins-slave.xml
   args:
@@ -24,6 +19,3 @@
   assert:
     that:
       - out.stdout.find('-secret XYZ')
-
-- debug:
-    msg: '{{ out }}'
