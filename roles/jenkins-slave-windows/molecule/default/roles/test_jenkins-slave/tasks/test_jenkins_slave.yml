@@ -13,8 +13,16 @@
 #    msg: '{{ jenkins_slave_home_dir }}'
 #    msg: 'FOO_VAR: {{ foo_var }}, BAR_VAR: {{ bar_var }}'
 
-- name: Test config file has valid secret
+- name: Get config file
   win_lineinfile:
     path: '{{ jenkins_slave_home_dir }}/jenkins-slave.xml'
     regex: '<arguments>'
-    state: present
+    state: absent
+    check_mode: yes
+    changed_when: false
+    register: out
+
+- name: Test config file has valid secret
+  assert:
+    that:
+      - out.found
