@@ -2,7 +2,7 @@
 - name: Get Jenkins Slave service info
   win_service:
     name: Jenkins_Slave
-register: service_info
+  register: service_info
 
 - name: Test Jenkins Slave service is installed
   assert:
