@@ -13,6 +13,7 @@
   win_shell: cat jenkins-slave.xml
   args:
     chdir: '{{ jenkins_slave_home_dir }}'
+  changed_when: false
   register: out
 
 - name: Test config file has valid secret
