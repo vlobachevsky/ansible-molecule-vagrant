@@ -18,4 +18,4 @@
 - name: Test config file has valid secret
   assert:
     that:
-      - out.stdout.find('-secret XYZ')
+      - out.stdout.find('-secret {{ jenkins_slave_secret }}')

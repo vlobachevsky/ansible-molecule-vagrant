@@ -7,3 +7,4 @@
         name: "test_jenkins-slave"
       vars:
         jenkins_slave_home_dir: C:\Jenkins_Slave
+        jenkins_slave_secret: XYZ
