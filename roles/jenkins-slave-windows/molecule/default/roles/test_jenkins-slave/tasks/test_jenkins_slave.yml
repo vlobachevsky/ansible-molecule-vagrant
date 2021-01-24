@@ -23,7 +23,7 @@
 - name: Test config file has valid secret
   assert:
     that:
-      - in out.stdout.find('-secret XYZ')
+      - out.stdout.find('-secret XYZ')
 
 - debug:
     msg: '{{ out }}'
