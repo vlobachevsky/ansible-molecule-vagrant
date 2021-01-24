@@ -16,6 +16,7 @@
   changed_when: false
   register: out
 
+# Doesn't work as expected: XYZ in file, but ABC found
 - name: Test config file has valid secret
   assert:
     that:
